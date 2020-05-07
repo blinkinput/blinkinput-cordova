@@ -1,0 +1,13 @@
+# Mac
+.DS_Store
+
+# blinkid-ios containing framework and bundle
+BlinkID/src/ios/blinkid-ios
+
+# demo app
+BlinkIdDemo
+
+# res
+resources/signing
+
+BlinkIdDevDemo
