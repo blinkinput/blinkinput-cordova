@@ -1,0 +1,61 @@
+{
+  "name": "blinkinput-cordova",
+  "version": "4.2.0",
+  "description": "A small and powerful ID card scanning library",
+  "cordova": {
+    "id": "blinkinput-cordova",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BlinkInput/blinkinput-cordova.git"
+  },
+  "keywords": [
+    "scan",
+    "id",
+    "scanner",
+    "identity",
+    "ID",
+    "passport",
+    "sdk",
+    "ocr",
+    "USDL",
+    "PDF417",
+    "MRZ",
+    "MRTD",
+    "barcode",
+    "DL",
+    "card",
+    "document",
+    "microblink",
+    "blinkinput",
+    "ionic",
+    "phonegap",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=7.0.0"
+    },
+    {
+      "name": "cordova-android",
+      "version": ">=8.0.0"
+    },
+    {
+      "name": "cordova-ios",
+      "version": ">=4.4.0"
+    }
+  ],
+  "author": "Microblink",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BlinkInput/blinkinput-cordova/issues"
+  },
+  "homepage": "https://github.com/BlinkInput/blinkinput-cordova#readme"
+}

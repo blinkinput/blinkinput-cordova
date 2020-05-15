@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="blinkinput-cordova"
+        version="4.2.0">
+
+    <name>BlinkInputScanner</name>
+    <description>A small and powerful OCR library</description>
+    <license>MIT</license>
+    <keywords>ID</keywords>
+    <author>Microblink Team info@microblink.com</author>
+
+    <engines>
+        <engine name="cordova" version=">=7.0.0" />
+        <engine name="cordova-android" version=">=8.0.0" />
+    </engines>   
+
+    <js-module src="www/blinkInputScanner.js" name="BlinkInputScanner">
+        <clobbers target="cordova.plugins.BlinkInput" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="BlinkInputScanner">
+                <param name="android-package" value="com.phonegap.plugins.microblink.MicroblinkScanner" />
+            </feature>
+        </config-file>
+
+        <config-file target="app/src/main/AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.CAMERA" />
+            <uses-permission android:name="android.permission.FLASHLIGHT" />
+            
+            <uses-feature android:name="android.hardware.camera" />
+            <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+            <uses-feature android:name="android.hardware.camera.flash" android:required="false" />
+
+            <supports-screens
+                android:anyDensity="true"
+                android:largeScreens="true"
+                android:normalScreens="true"
+                android:resizeable="true"
+                android:smallScreens="true" />
+        </config-file>
+
+        <config-file target="app/src/main/AndroidManifest.xml" parent="/manifest/application">
+            <activity
+                    android:name="com.microblink.activity.ScanCard"
+                    android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+                    android:configChanges="orientation|screenSize"
+                    android:screenOrientation="portrait" >
+            </activity>
+        </config-file>
+
+
+        <!-- ANDROID SOURCE FILES BEGIN -->
+        <!-- ANDROID SOURCE FILES END -->
+
+        <!-- resources -->
+        <resource-file src="src/android/res/raw/beep.mp3" target="res/raw/beep.mp3" />
+
+        <framework src="src/android/libBlinkID.gradle" custom="true" type="gradleReference" />
+        
+        <!--hook type="after_prepare" src="scripts/fix-largeheap.js" /-->
+    </platform>
+
+    <platform name="ios">
+        <!-- IOS SOURCE FILES BEGIN -->
+        <source-file src="src/ios/sources/MBBlinkInputSerializationUtils.m" />
+        <source-file src="src/ios/sources/MBCommonSerializationUtils.m" />
+        <source-file src="src/ios/sources/CDVMicroblinkScanner.m" />
+        <source-file src="src/ios/sources/MBSerializationUtils.m" />
+        <header-file src="src/ios/sources/MBBlinkInputSerializationUtils.h" />
+        <header-file src="src/ios/sources/MBCommonSerializationUtils.h" />
+        <header-file src="src/ios/sources/CDVMicroblinkScanner.h" />
+        <header-file src="src/ios/sources/MBSerializationUtils.h" />
+        <header-file src="src/ios/sources/Parsers/MBParserWrapper.h" />
+        <source-file src="src/ios/sources/Parsers/MBParserSerializers.m" />
+        <source-file src="src/ios/sources/Parsers/MBParserWrapper.m" />
+        <header-file src="src/ios/sources/Parsers/MBParserSerializers.h" />
+        <source-file src="src/ios/sources/Parsers/Wrappers/MBVinParserWrapper.m" />
+        <source-file src="src/ios/sources/Parsers/Wrappers/MBLicensePlatesParserWrapper.m" />
+        <header-file src="src/ios/sources/Parsers/Wrappers/MBDateParserWrapper.h" />
+        <header-file src="src/ios/sources/Parsers/Wrappers/MBRawParserWrapper.h" />
+        <header-file src="src/ios/sources/Parsers/Wrappers/MBTopUpParserWrapper.h" />
+        <source-file src="src/ios/sources/Parsers/Wrappers/MBAmountParserWrapper.m" />
+        <header-file src="src/ios/sources/Parsers/Wrappers/MBIbanParserWrapper.h" />
+        <source-file src="src/ios/sources/Parsers/Wrappers/MBEmailParserWrapper.m" />
+        <source-file src="src/ios/sources/Parsers/Wrappers/MBRegexParserWrapper.m" />
+        <source-file src="src/ios/sources/Parsers/Wrappers/MBRawParserWrapper.m" />
+        <source-file src="src/ios/sources/Parsers/Wrappers/MBDateParserWrapper.m" />
+        <header-file src="src/ios/sources/Parsers/Wrappers/MBLicensePlatesParserWrapper.h" />
+        <header-file src="src/ios/sources/Parsers/Wrappers/MBVinParserWrapper.h" />
+        <source-file src="src/ios/sources/Parsers/Wrappers/MBTopUpParserWrapper.m" />
+        <header-file src="src/ios/sources/Parsers/Wrappers/MBEmailParserWrapper.h" />
+        <source-file src="src/ios/sources/Parsers/Wrappers/MBIbanParserWrapper.m" />
+        <header-file src="src/ios/sources/Parsers/Wrappers/MBAmountParserWrapper.h" />
+        <header-file src="src/ios/sources/Parsers/Wrappers/MBRegexParserWrapper.h" />
+        <header-file src="src/ios/sources/Overlays/MBOverlayVCCreator.h" />
+        <source-file src="src/ios/sources/Overlays/MBOverlaySettingsSerializers.m" />
+        <header-file src="src/ios/sources/Overlays/MBOverlayViewControllerDelegate.h" />
+        <header-file src="src/ios/sources/Overlays/MBOverlaySettingsSerializers.h" />
+        <header-file src="src/ios/sources/Overlays/Serialization/MBFieldByFieldOverlaySettingsSerialization.h" />
+        <header-file src="src/ios/sources/Overlays/Serialization/MBBarcodeOverlaySettingsSerialization.h" />
+        <header-file src="src/ios/sources/Overlays/Serialization/MBDocumentCaptureOverlaySettingsSerialization.h" />
+        <source-file src="src/ios/sources/Overlays/Serialization/MBFieldByFieldOverlaySettingsSerialization.m" />
+        <source-file src="src/ios/sources/Overlays/Serialization/MBDocumentCaptureOverlaySettingsSerialization.m" />
+        <source-file src="src/ios/sources/Overlays/Serialization/MBBarcodeOverlaySettingsSerialization.m" />
+        <source-file src="src/ios/sources/Processors/MBProcessorWrapper.m" />
+        <source-file src="src/ios/sources/Processors/MBProcessorSerializers.m" />
+        <header-file src="src/ios/sources/Processors/MBProcessorSerializers.h" />
+        <header-file src="src/ios/sources/Processors/MBProcessorWrapper.h" />
+        <header-file src="src/ios/sources/Processors/Wrappers/MBParserGroupProcessorWrapper.h" />
+        <header-file src="src/ios/sources/Processors/Wrappers/MBImageReturnProcessorWrapper.h" />
+        <source-file src="src/ios/sources/Processors/Wrappers/MBParserGroupProcessorWrapper.m" />
+        <source-file src="src/ios/sources/Processors/Wrappers/MBImageReturnProcessorWrapper.m" />
+        <header-file src="src/ios/sources/Recognizers/MBRecognizerWrapper.h" />
+        <header-file src="src/ios/sources/Recognizers/MBRecognizerSerializers.h" />
+        <source-file src="src/ios/sources/Recognizers/MBRecognizerWrapper.m" />
+        <source-file src="src/ios/sources/Recognizers/MBRecognizerSerializers.m" />
+        <source-file src="src/ios/sources/Recognizers/Wrappers/MBSimNumberRecognizerWrapper.m" />
+        <source-file src="src/ios/sources/Recognizers/Wrappers/MBDocumentCaptureRecognizerWrapper.m" />
+        <header-file src="src/ios/sources/Recognizers/Wrappers/MBPdf417RecognizerWrapper.h" />
+        <header-file src="src/ios/sources/Recognizers/Wrappers/MBBarcodeRecognizerWrapper.h" />
+        <header-file src="src/ios/sources/Recognizers/Wrappers/MBSuccessFrameGrabberRecognizerWrapper.h" />
+        <source-file src="src/ios/sources/Recognizers/Wrappers/MBBlinkInputRecognizerWrapper.m" />
+        <header-file src="src/ios/sources/Recognizers/Wrappers/MBDocumentCaptureRecognizerWrapper.h" />
+        <header-file src="src/ios/sources/Recognizers/Wrappers/MBSimNumberRecognizerWrapper.h" />
+        <source-file src="src/ios/sources/Recognizers/Wrappers/MBPdf417RecognizerWrapper.m" />
+        <header-file src="src/ios/sources/Recognizers/Wrappers/MBBlinkInputRecognizerWrapper.h" />
+        <source-file src="src/ios/sources/Recognizers/Wrappers/MBSuccessFrameGrabberRecognizerWrapper.m" />
+        <source-file src="src/ios/sources/Recognizers/Wrappers/MBBarcodeRecognizerWrapper.m" />
+        <!-- IOS SOURCE FILES END -->
+        
+        <framework src="libc++.dylib" />
+        <framework src="libz.dylib" />
+        <framework src="libiconv.dylib" />
+
+        <framework src="CoreVideo.framework" />
+        <framework src="CoreText.framework" />
+        <framework src="CoreMedia.framework" />
+        <framework src="QuartzCore.framework" />
+        <framework src="AudioToolbox.framework" />
+        <framework src="OpenGLES.framework" />
+        <framework src="Accelerate.framework" />
+        <framework src="src/ios/Microblink.framework" custom="true" embed="true"/>
+        
+        <preference name="CAMERA_USAGE_DESCRIPTION" default=" " />
+        <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
+            <string>$CAMERA_USAGE_DESCRIPTION</string>
+        </config-file>
+        
+        <resource-file src="src/ios/Microblink.bundle" />
+        <config-file target="config.xml" parent="/*">
+            <feature name="BlinkInputScanner">
+                <param name="ios-package" value="CDVMicroblinkScanner" />
+            </feature>
+        </config-file>
+        
+        <hook type="before_plugin_install" src="scripts/initIOSFramework.sh"/>
+    </platform>
+    
+</plugin>
