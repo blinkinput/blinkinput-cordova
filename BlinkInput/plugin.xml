@@ -108,13 +108,10 @@
         <source-file src="src/ios/sources/Overlays/Serialization/MBDocumentCaptureOverlaySettingsSerialization.m" />
         <source-file src="src/ios/sources/Overlays/Serialization/MBBarcodeOverlaySettingsSerialization.m" />
         <source-file src="src/ios/sources/Processors/MBProcessorWrapper.m" />
-        <source-file src="src/ios/sources/Processors/MBProcessorSerializers.m" />
         <header-file src="src/ios/sources/Processors/MBProcessorSerializers.h" />
         <header-file src="src/ios/sources/Processors/MBProcessorWrapper.h" />
         <header-file src="src/ios/sources/Processors/Wrappers/MBParserGroupProcessorWrapper.h" />
-        <header-file src="src/ios/sources/Processors/Wrappers/MBImageReturnProcessorWrapper.h" />
         <source-file src="src/ios/sources/Processors/Wrappers/MBParserGroupProcessorWrapper.m" />
-        <source-file src="src/ios/sources/Processors/Wrappers/MBImageReturnProcessorWrapper.m" />
         <header-file src="src/ios/sources/Recognizers/MBRecognizerWrapper.h" />
         <header-file src="src/ios/sources/Recognizers/MBRecognizerSerializers.h" />
         <source-file src="src/ios/sources/Recognizers/MBRecognizerWrapper.m" />
@@ -124,11 +121,9 @@
         <header-file src="src/ios/sources/Recognizers/Wrappers/MBPdf417RecognizerWrapper.h" />
         <header-file src="src/ios/sources/Recognizers/Wrappers/MBBarcodeRecognizerWrapper.h" />
         <header-file src="src/ios/sources/Recognizers/Wrappers/MBSuccessFrameGrabberRecognizerWrapper.h" />
-        <source-file src="src/ios/sources/Recognizers/Wrappers/MBBlinkInputRecognizerWrapper.m" />
         <header-file src="src/ios/sources/Recognizers/Wrappers/MBDocumentCaptureRecognizerWrapper.h" />
         <header-file src="src/ios/sources/Recognizers/Wrappers/MBSimNumberRecognizerWrapper.h" />
         <source-file src="src/ios/sources/Recognizers/Wrappers/MBPdf417RecognizerWrapper.m" />
-        <header-file src="src/ios/sources/Recognizers/Wrappers/MBBlinkInputRecognizerWrapper.h" />
         <source-file src="src/ios/sources/Recognizers/Wrappers/MBSuccessFrameGrabberRecognizerWrapper.m" />
         <source-file src="src/ios/sources/Recognizers/Wrappers/MBBarcodeRecognizerWrapper.m" />
         <!-- IOS SOURCE FILES END -->

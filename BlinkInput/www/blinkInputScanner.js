@@ -689,77 +689,45 @@ function ProcessorResult(resultState) {
 }
 
 
-/**
- * Result object for ImageReturnProcessor.
- */
-function ImageReturnProcessorResult(nativeResult) {
-    ProcessorResult.call(this, nativeResult.resultState);
-    
-    /** 
-     * Returns the raw image saved by the processor. If no image was saved by processor, returns null.
-     * falseTE: Internal buffers of the returned image are valid as long as Result object (this) is alive. 
-     */
-    this.rawImage = nativeResult.rawImage;
-    
-}
 
-ImageReturnProcessorResult.prototype = new ProcessorResult(ProcessorResultState.empty);
+// /**
+//  * Result object for ParserGroupProcessorResult.
+//  */
+// function ParserGroupProcessorResult(nativeResult) {
+//     ProcessorResult.call(this, nativeResult.resultState);
+// }
 
-BlinkInput.prototype.ImageReturnProcessorResult = ImageReturnProcessorResult;
+// ParserGroupProcessorResult.prototype = new ProcessorResult(ProcessorResultState.empty);
 
-/**
- * Processor that will simply save given image.
- */
-function ImageReturnProcessor() {
-    Processor.call(this, 'ImageReturnProcessor');
-    
-    this.createResultFromNative = function (nativeResult) { return new ImageReturnProcessorResult(nativeResult); }
+// BlinkInput.prototype.ParserGroupProcessorResult = ParserGroupProcessorResult;
 
-}
+// /**
+//  * ParserGroupProcessor can can have any number of parsers
+//  * frame on which the other recognizer finished recognition.
+//  */
+// function ParserGroupProcessor(parsers) {
+//     Processor.call(this, 'ParserGroupProcessor');
+//     /** Array of parsers */
+//     this.parsers = parsers;
 
-ImageReturnProcessor.prototype = new Processor('ImageReturnProcessor');
+//     if (!(this.parsers.constructor === Array)) {
+//         throw new Error("parsers must be array of Parser objects!");
+//     }
+//     // ensure every element in array is Recognizer
+//     for (var i = 0; i < this.parsers.length; ++i) {
+//         if (!(this.parsers[i] instanceof Parser )) {
+//             throw new Error( "Each element in parsers must be instance of Parser" );
+//         }
+//     }
 
-BlinkInput.prototype.ImageReturnProcessor = ImageReturnProcessor;
+//     this.createResultFromNative = (function (nativeResult) { 
+//         return new ParserGroupProcessorResult(nativeResult) 
+//     }).bind(this);
+// }
 
+// ParserGroupProcessor.prototype = new Processor('ParserGroupProcessor');
 
-/**
- * Result object for ParserGroupProcessorResult.
- */
-function ParserGroupProcessorResult(nativeResult) {
-    ProcessorResult.call(this, nativeResult.resultState);
-}
-
-ParserGroupProcessorResult.prototype = new ProcessorResult(ProcessorResultState.empty);
-
-BlinkInput.prototype.ParserGroupProcessorResult = ParserGroupProcessorResult;
-
-/**
- * ParserGroupProcessor can can have any number of parsers
- * frame on which the other recognizer finished recognition.
- */
-function ParserGroupProcessor(parsers) {
-    Processor.call(this, 'ParserGroupProcessor');
-    /** Array of parsers */
-    this.parsers = parsers;
-
-    if (!(this.parsers.constructor === Array)) {
-        throw new Error("parsers must be array of Parser objects!");
-    }
-    // ensure every element in array is Recognizer
-    for (var i = 0; i < this.parsers.length; ++i) {
-        if (!(this.parsers[i] instanceof Parser )) {
-            throw new Error( "Each element in parsers must be instance of Parser" );
-        }
-    }
-
-    this.createResultFromNative = (function (nativeResult) { 
-        return new ParserGroupProcessorResult(nativeResult) 
-    }).bind(this);
-}
-
-ParserGroupProcessor.prototype = new Processor('ParserGroupProcessor');
-
-BlinkInput.prototype.ParserGroupProcessor = ParserGroupProcessor;
+// BlinkInput.prototype.ParserGroupProcessor = ParserGroupProcessor;
 
 /**
  * Result object for RegexParser.
@@ -1490,44 +1458,47 @@ function DocumentCaptureRecognizerWrapper(documentCaptureRecognizer) {
 
 BlinkInput.prototype.DocumentCaptureRecognizerWrapper = DocumentCaptureRecognizerWrapper;
 
-/**
- * Result object for BlinkInputRecognierResult.
- */
-function BlinkInputRecognizerResult(nativeResult) {
-    RecognizerResult.call(this, nativeResult.resultState);
-}
 
-BlinkInputRecognizerResult.prototype = new RecognizerResult(RecognizerResultState.empty);
+//
+// /**
+//  * Result object for BlinkInputRecognierResult.
+//  */
+// function BlinkInputRecognizerResult(nativeResult) {
+//     RecognizerResult.call(this, nativeResult.resultState);
+// }
 
-BlinkInput.prototype.BlinkInputRecognizerResult = BlinkInputRecognizerResult;
+// BlinkInputRecognizerResult.prototype = new RecognizerResult(RecognizerResultState.empty);
 
-/**
- * BlinkInputRecognizerResult can can have any number of processors
- * frame on which the other recognizer finished recognition.
- */
-function BlinkInputRecognizer(processors) {
-    Recognizer.call(this, 'BlinkInputRecognizer');
-    /** Array of processors */
-    this.processors = processors;
+// BlinkInput.prototype.BlinkInputRecognizerResult = BlinkInputRecognizerResult;
 
-    if (!(this.processors.constructor === Array)) {
-        throw new Error("parsers must be array of Parser objects!");
-    }
-    // ensure every element in array is Recognizer
-    for (var i = 0; i < this.processors.length; ++i) {
-        if (!(this.processors[i] instanceof Processor )) {
-            throw new Error( "Each element in processors must be instance of Processor" );
-        }
-    }
+// /**
+//  * BlinkInputRecognizerResult can can have any number of processors
+//  * frame on which the other recognizer finished recognition.
+//  */
+// function BlinkInputRecognizer(processors) {
+//     Recognizer.call(this, 'BlinkInputRecognizer');
+//     /** Array of processors */
+//     this.processors = processors;
 
-    this.createResultFromNative = (function (nativeResult) { 
-        return new BlinkInputRecognizerResult(nativeResult) 
-    }).bind(this);
-}
+//     if (!(this.processors.constructor === Array)) {
+//         throw new Error("parsers must be array of Parser objects!");
+//     }
+//     // ensure every element in array is Recognizer
+//     for (var i = 0; i < this.processors.length; ++i) {
+//         if (!(this.processors[i] instanceof Processor )) {
+//             throw new Error( "Each element in processors must be instance of Processor" );
+//         }
+//     }
 
-BlinkInputRecognizer.prototype = new Recognizer('BlinkInputRecognizer');
+//     this.createResultFromNative = (function (nativeResult) { 
+//         return new BlinkInputRecognizerResult(nativeResult) 
+//     }).bind(this);
+// }
 
-BlinkInput.prototype.BlinkInputRecognizer = BlinkInputRecognizer;
+// BlinkInputRecognizer.prototype = new Recognizer('BlinkInputRecognizer');
+
+// BlinkInput.prototype.BlinkInputRecognizer = BlinkInputRecognizer;
+//
 // RECOGNIZERS
 
 // export BlinkInputScanner
