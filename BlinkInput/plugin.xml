@@ -55,12 +55,35 @@
 
 
         <!-- ANDROID SOURCE FILES BEGIN -->
+        <source-file src="src/android/java/com/phonegap/plugins/microblink/SerializationUtils.java" target-dir="src/com/phonegap/plugins/microblink" />
+        <source-file src="src/android/java/com/phonegap/plugins/microblink/MicroblinkScanner.java" target-dir="src/com/phonegap/plugins/microblink" />
+        <source-file src="src/android/java/com/phonegap/plugins/microblink/FakeR.java" target-dir="src/com/phonegap/plugins/microblink" />
+        <source-file src="src/android/java/com/phonegap/plugins/microblink/parsers/ParserSerialization.java" target-dir="src/com/phonegap/plugins/microblink/parsers" />
+        <source-file src="src/android/java/com/phonegap/plugins/microblink/parsers/ParserSerializers.java" target-dir="src/com/phonegap/plugins/microblink/parsers" />
+        <source-file src="src/android/java/com/phonegap/plugins/microblink/parsers/serialization/IbanParserSerialization.java" target-dir="src/com/phonegap/plugins/microblink/parsers/serialization" />
+        <source-file src="src/android/java/com/phonegap/plugins/microblink/parsers/serialization/VinParserSerialization.java" target-dir="src/com/phonegap/plugins/microblink/parsers/serialization" />
+        <source-file src="src/android/java/com/phonegap/plugins/microblink/parsers/serialization/EmailParserSerialization.java" target-dir="src/com/phonegap/plugins/microblink/parsers/serialization" />
+        <source-file src="src/android/java/com/phonegap/plugins/microblink/parsers/serialization/AmountParserSerialization.java" target-dir="src/com/phonegap/plugins/microblink/parsers/serialization" />
+        <source-file src="src/android/java/com/phonegap/plugins/microblink/parsers/serialization/DateParserSerialization.java" target-dir="src/com/phonegap/plugins/microblink/parsers/serialization" />
+        <source-file src="src/android/java/com/phonegap/plugins/microblink/parsers/serialization/LicensePlatesParserSerialization.java" target-dir="src/com/phonegap/plugins/microblink/parsers/serialization" />
+        <source-file src="src/android/java/com/phonegap/plugins/microblink/parsers/serialization/TopUpParserSerialization.java" target-dir="src/com/phonegap/plugins/microblink/parsers/serialization" />
+        <source-file src="src/android/java/com/phonegap/plugins/microblink/parsers/serialization/RawParserSerialization.java" target-dir="src/com/phonegap/plugins/microblink/parsers/serialization" />
+        <source-file src="src/android/java/com/phonegap/plugins/microblink/overlays/OverlaySettingsSerialization.java" target-dir="src/com/phonegap/plugins/microblink/overlays" />
+        <source-file src="src/android/java/com/phonegap/plugins/microblink/overlays/OverlaySettingsSerializers.java" target-dir="src/com/phonegap/plugins/microblink/overlays" />
+        <source-file src="src/android/java/com/phonegap/plugins/microblink/overlays/serialization/BarcodeOverlaySettingsSerialization.java" target-dir="src/com/phonegap/plugins/microblink/overlays/serialization" />
+        <source-file src="src/android/java/com/phonegap/plugins/microblink/recognizers/RecognizerSerializers.java" target-dir="src/com/phonegap/plugins/microblink/recognizers" />
+        <source-file src="src/android/java/com/phonegap/plugins/microblink/recognizers/RecognizerSerialization.java" target-dir="src/com/phonegap/plugins/microblink/recognizers" />
+        <source-file src="src/android/java/com/phonegap/plugins/microblink/recognizers/serialization/SuccessFrameGrabberRecognizerSerialization.java" target-dir="src/com/phonegap/plugins/microblink/recognizers/serialization" />
+        <source-file src="src/android/java/com/phonegap/plugins/microblink/recognizers/serialization/Pdf417RecognizerSerialization.java" target-dir="src/com/phonegap/plugins/microblink/recognizers/serialization" />
+        <source-file src="src/android/java/com/phonegap/plugins/microblink/recognizers/serialization/DocumentCaptureRecognizerSerialization.java" target-dir="src/com/phonegap/plugins/microblink/recognizers/serialization" />
+        <source-file src="src/android/java/com/phonegap/plugins/microblink/recognizers/serialization/SimNumberRecognizerSerialization.java" target-dir="src/com/phonegap/plugins/microblink/recognizers/serialization" />
+        <source-file src="src/android/java/com/phonegap/plugins/microblink/recognizers/serialization/BarcodeRecognizerSerialization.java" target-dir="src/com/phonegap/plugins/microblink/recognizers/serialization" />
         <!-- ANDROID SOURCE FILES END -->
 
         <!-- resources -->
         <resource-file src="src/android/res/raw/beep.mp3" target="res/raw/beep.mp3" />
 
-        <framework src="src/android/libBlinkID.gradle" custom="true" type="gradleReference" />
+        <framework src="src/android/libBlinkInput.gradle" custom="true" type="gradleReference" />
         
         <!--hook type="after_prepare" src="scripts/fix-largeheap.js" /-->
     </platform>
