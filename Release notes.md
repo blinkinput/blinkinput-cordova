@@ -1,3 +1,5 @@
+# Release notes
+
 ## 4.3.0
 
 -  Initial plugin release  with [iOS SDK](https://github.com/BlinkInput/blinkinput-ios)  v4.3.0 and [Android SDK](https://github.com/BlinkInput/blinkinput-android) v4.3.0
