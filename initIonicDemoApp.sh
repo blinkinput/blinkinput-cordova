@@ -1,7 +1,7 @@
 #!/bin/bash
 
-APP_NAME="BlinkIDDemo"
-APP_ID="com.microblink.blinkid"
+APP_NAME="BlinkInputDemo"
+APP_ID="com.microblink.blinkinput"
 
 # remove any existing code
 rm -rf $APP_NAME
@@ -11,8 +11,8 @@ ionic start $APP_NAME blank --type=ionic1
 # enter into demo project folder
 cd $APP_NAME
 
-# add the BlinkID plugin
-ionic cordova plugin add ../BlinkID
+# add the BlinkInput plugin
+ionic cordova plugin add ../BlinkInput
 
 # add ios and android support to the project
 ionic cordova platform add android@8
