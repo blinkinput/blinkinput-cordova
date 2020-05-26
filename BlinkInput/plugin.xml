@@ -64,6 +64,7 @@
         <source-file src="src/android/java/com/phonegap/plugins/microblink/parsers/serialization/VinParserSerialization.java" target-dir="src/com/phonegap/plugins/microblink/parsers/serialization" />
         <source-file src="src/android/java/com/phonegap/plugins/microblink/parsers/serialization/EmailParserSerialization.java" target-dir="src/com/phonegap/plugins/microblink/parsers/serialization" />
         <source-file src="src/android/java/com/phonegap/plugins/microblink/parsers/serialization/AmountParserSerialization.java" target-dir="src/com/phonegap/plugins/microblink/parsers/serialization" />
+        <source-file src="src/android/java/com/phonegap/plugins/microblink/parsers/serialization/RegexParserSerialization.java" target-dir="src/com/phonegap/plugins/microblink/parsers/serialization" />
         <source-file src="src/android/java/com/phonegap/plugins/microblink/parsers/serialization/DateParserSerialization.java" target-dir="src/com/phonegap/plugins/microblink/parsers/serialization" />
         <source-file src="src/android/java/com/phonegap/plugins/microblink/parsers/serialization/LicensePlatesParserSerialization.java" target-dir="src/com/phonegap/plugins/microblink/parsers/serialization" />
         <source-file src="src/android/java/com/phonegap/plugins/microblink/parsers/serialization/TopUpParserSerialization.java" target-dir="src/com/phonegap/plugins/microblink/parsers/serialization" />

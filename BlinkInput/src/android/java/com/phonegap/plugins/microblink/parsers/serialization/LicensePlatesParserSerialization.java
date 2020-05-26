@@ -21,7 +21,7 @@ public final class LicensePlatesParserSerialization implements ParserSerializati
         JSONObject jsonResult = new JSONObject();
         try {
             SerializationUtils.addCommonParserResultData(jsonResult, result);
-            jsonResult.put("licensePlateString", result.getLicensePlateString());
+            jsonResult.put("licensePlate", result.getLicensePlate());
         } catch (JSONException e) {
             // see https://developer.android.com/reference/org/json/JSONException
             throw new RuntimeException(e);
