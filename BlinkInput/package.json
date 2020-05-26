@@ -1,7 +1,7 @@
 {
   "name": "blinkinput-cordova",
-  "version": "4.2.0",
-  "description": "A small and powerful ID card scanning library",
+  "version": "4.3.0",
+  "description": "A small and powerful scanning library",
   "cordova": {
     "id": "blinkinput-cordova",
     "platforms": [

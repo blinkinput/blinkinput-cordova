@@ -4,7 +4,7 @@
 HERE="$(dirname "$(test -L "$0" && readlink "$0" || echo "$0")")"
 pushd "${HERE}/../src/ios/" > /dev/null
 
-LINK='https://github.com/BlinkInput/blinkinput-ios/releases/download/v4.2.0/blinkinput-ios_v4.2.0.zip'
+LINK='https://github.com/BlinkInput/blinkinput-ios/releases/download/v4.3.0/blinkinput-ios_v4.3.0.zip'
 FILENAME='blinkinput-ios.zip'
 
 # check if Microblink framework and bundle already exist
