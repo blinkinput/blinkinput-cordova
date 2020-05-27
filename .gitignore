@@ -2,12 +2,12 @@
 .DS_Store
 
 # blinkid-ios containing framework and bundle
-BlinkID/src/ios/blinkid-ios
+BlinkInput/src/ios/blinkinput-ios
 
 # demo app
-BlinkIdDemo
+BlinkInputDemo
 
 # res
 resources/signing
 
-BlinkIdDevDemo
+BlinkInputDevDemo
